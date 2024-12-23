@@ -1,16 +1,17 @@
+let screen = document.getElementById("screen");
+
 function appendValue(value) {
-    document.getElementById("display").value += value;
+  screen.textContent += value;
 }
 
-function clearDisplay() {
-    document.getElementById("display").value = "";
+function clearScreen() {
+  screen.textContent = "";
 }
 
 function calculate() {
-    try {
-        const result = eval(document.getElementById("display").value);
-        document.getElementById("display").value = result;
-    } catch (error) {
-        alert("Expression invalide !");
-        clearDisplay();
-    }
+  try {
+    screen.textContent = eval(screen.textContent);
+  } catch {
+    screen.textContent = "Erreur";
+  }
+}
